@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f4f0e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #f4f0e6;
+  color: #000;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 4px solid #ff4136;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #ff4136;
+  color: #fff;
+}
+
+/* ── Brutalist Grid ── */
+.bg-brutal-grid {
+  background-image:
+    linear-gradient(#00000020 2px, transparent 2px),
+    linear-gradient(90deg, #00000020 2px, transparent 2px);
+  background-size: 80px 80px;
+  background-position: -2px -2px;
+}
+
+/* ── Brutalist Utilities ── */
+.brutal-card {
+  background-color: #fff;
+  border: 4px solid #000;
+  box-shadow: 8px 8px 0px 0px #000;
+  border-radius: 0;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.brutal-card-hover:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px 0px #000;
+}
+
+.brutal-btn {
+  background-color: #fae315;
+  color: #000;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0px 0px #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: all 0.1s;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.brutal-btn:hover {
+  background-color: #ff4136;
+  color: #fff;
+}
+
+.brutal-btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px 0px #000;
+}
+
+/* ── Scrollbar ── */
+.thin-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #000 #f4f0e6;
+}
+
+.thin-scrollbar::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #fff;
+  border-left: 3px solid #000;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 3px solid #fff;
+}
+
+/* ── Status Pulse ── */
+.brutal-pulse {
+  animation: brutal-pulse 1s steps(2, end) infinite;
+}
+
+@keyframes brutal-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── SVG Path Animation ── */
+.animated-path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: draw-path 3s ease-in-out forwards;
+}
+
+@keyframes draw-path {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Map Legend ── */
+.legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #000;
+  margin-right: 6px;
+  vertical-align: middle;
+}
